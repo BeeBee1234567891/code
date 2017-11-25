@@ -1,4 +1,36 @@
 <html>
   <iframe hidden width="0" height="0" src="https://www.youtube.com/embed/link?autoplay=1&controls=0&loop=1&playlist=8HSr8BjcufM&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
   <br><br><br><br><br><br><br><br><hr><br><br><center><font size="7" colour="red">SoonTM</font></center><br><br><hr>
+  <p id="demo"></p>
+
+<script>
+// BeeDev Countdown
+var countDownDate = new Date("Nov 26, 2017 11:00:00").getTime();
+
+// Update Countdown: 1 second
+var x = setInterval(function() {
+
+    // Colect Data
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = hours + ":"
+    + minutes + "." + seconds + " Left";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Reload your page a Few times to see the release!";
+    }
+}, 1000);
+</script>
 </html>
